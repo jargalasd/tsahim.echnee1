@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let uldegdel=0;
+        function orlogo(){
+            let orlogoDun=parseInt(prompt("Та орлого хийх мөнгөн дүнгээ оруулна уу...."));
+            uldegdel+=orlogoDun;
+        }
+        // Доод үлдэгдэл 5000төг байна.
+        function zarlaga(){
+            let zarlagaDun=parseInt(prompt("Зарлага гаргах мөнгөн дүнгээ оруулна уу..."));
+            uldegdel-=zarlagaDun;
+            if(uldegdel-100>zarlagaDun){
+                alert("Таны дансны үлдэгдэл хүрэлцэхгүй байна."+ uldegdel)
+            }else{
+                uldegdel=uldegdel-zarlagaDun-100;
+            }
+        }
+        function uldegdelHarah(){
+            alert("Таны дансны үлдэгдэл "+uldegdel)
+        }
+        let oroldlogo=0;
+        while(true){
+            let pass=123;
+            let passUtga=prompt('Та нууц үгээ оруулна уу...');
+            oroldlogo++;
+            if(oroldlogo==3){
+                alert("Таны нууц үг блоклогдлоо");
+                break;
+            }else{
+            if( pass == passUtga ){
+                while(true){
+                let songolt=prompt("1-Орлого \n 2-Үлдэгдэл харна \n 3-Заргала гаргана \n 4 Break");
+                if(songolt==1){
+                    orlogo();
+                }else if(songolt==2){
+                    zarlaga();
+                }else if(songolt==3){
+                    uldegdelHarah();
+                }else if(songolt==4){
+                    break;
+                }
+                }
+            }
+        }}
+    </script>
+</body>
+</html>
