@@ -15,9 +15,10 @@
         // Доод үлдэгдэл 5000төг байна.
         function zarlaga(){
             let zarlagaDun=parseInt(prompt("Зарлага гаргах мөнгөн дүнгээ оруулна уу..."));
-            uldegdel-=zarlagaDun;
-            if(uldegdel-100>zarlagaDun){
-                alert("Таны дансны үлдэгдэл хүрэлцэхгүй байна."+ uldegdel)
+            
+
+            if(uldegdel-100-zarlagaDun<5000){
+                alert("Таны дансны үлдэгдэл зарлага гаргаад 5000 үлдэх учир үлдэгдэл хүрэлцэхгүй байна."+ uldegdel)
             }else{
                 uldegdel=uldegdel-zarlagaDun-100;
             }
@@ -30,13 +31,17 @@
             let pass=123;
             let passUtga=prompt('Та нууц үгээ оруулна уу...');
             oroldlogo++;
-            if(oroldlogo==3){
-                alert("Таны нууц үг блоклогдлоо");
+            if(oroldlogo==1){
+                alert("Нууц үг буруу байна. Та нууц үгээ зөв оруулах 2 боломж үлдлээ");
+            }else if(oroldlogo==2){
+                alert("Нууц үг буруу байна. Та нууц үгээ зөв оруулах 1 боломж үлдлээ");
+            }else if(oroldlogo==3) {
+                alert("Нууц үг буруу байна. Таны нууц үг блоклогдлоо");
                 break;
             }else{
             if( pass == passUtga ){
                 while(true){
-                let songolt=prompt("1-Орлого \n 2-Зарлага гаргана \n 3-Үлдэгдэл харна \n 4 Break");
+                let songolt=prompt("1-Орлого хийх \n 2-Зарлага гаргах \n 3-Үлдэгдэл харах \n 4 Break");
                 if(songolt==1){
                     orlogo();
                 }else if(songolt==2){
