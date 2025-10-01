@@ -11,49 +11,55 @@
         function orlogo(){
             let orlogoDun=parseInt(prompt("Та орлого хийх мөнгөн дүнгээ оруулна уу...."));
             uldegdel+=orlogoDun;
+            alert("Орлого амжилттай. Таны дансны үлдэгдэл: "+ uldegdel);
         }
         // Доод үлдэгдэл 5000төг байна.
         function zarlaga(){
             let zarlagaDun=parseInt(prompt("Зарлага гаргах мөнгөн дүнгээ оруулна уу..."));
-            
-
             if(uldegdel-100-zarlagaDun<5000){
-                alert("Таны дансны үлдэгдэл зарлага гаргаад 5000 үлдэх учир үлдэгдэл хүрэлцэхгүй байна."+ uldegdel)
+                alert("Таны дансны үлдэгдэл зарлага гаргаад 5000 үлдэх учираас таны үлдэгдэл хүрэлцэхгүй байна."+ uldegdel)
             }else{
                 uldegdel=uldegdel-zarlagaDun-100;
+                alert("Зарлага амжилттай. Таны дансны үлдэгдэл: "+ uldegdel);
             }
         }
         function uldegdelHarah(){
             alert("Таны дансны үлдэгдэл "+uldegdel)
         }
         let oroldlogo=0;
-        while(true){
-            let pass=123;
+        let pass=123;
+        let urgeljleh=true;
+        while(urgeljleh){
+            
             let passUtga=prompt('Та нууц үгээ оруулна уу...');
-            oroldlogo++;
-            if(oroldlogo==1){
-                alert("Нууц үг буруу байна. Та нууц үгээ зөв оруулах 2 боломж үлдлээ");
-            }else if(oroldlogo==2){
-                alert("Нууц үг буруу байна. Та нууц үгээ зөв оруулах 1 боломж үлдлээ");
-            }else if(oroldlogo==3) {
-                alert("Нууц үг буруу байна. Таны нууц үг блоклогдлоо");
-                break;
-            }else{
-            if( pass == passUtga ){
+            
+            if ( pass == passUtga ){
                 while(true){
-                let songolt=prompt("1-Орлого хийх \n 2-Зарлага гаргах \n 3-Үлдэгдэл харах \n 4 Break");
-                if(songolt==1){
-                    orlogo();
-                }else if(songolt==2){
-                    zarlaga();
-                }else if(songolt==3){
-                    uldegdelHarah();
-                }else if(songolt==4){
-                    break;
-                }
+                    let songolt=prompt("1-Орлого хийх \n 2-Зарлага гаргах (зарлага гаргах шимтгэл 100) \n 3-Үлдэгдэл харах \n 4 Break"
+                    );
+                    if(songolt==1){
+                        orlogo();
+                    }else if(songolt==2){
+                        zarlaga();
+                    }else if(songolt==3){
+                        uldegdelHarah();
+                    }else if(songolt==4){
+                        urgeljleh=false;
+                        break;
+                    }
                 }
             }
-        }}
+            else{
+                    oroldlogo++;
+                    if(oroldlogo==1){
+                        alert("Нууц үг буруу байна. Та нууц үгээ зөв оруулах 2 боломж үлдлээ");}
+                    else if(oroldlogo==2){
+                        alert("Нууц үг буруу байна. Та нууц үгээ зөв оруулах 1 боломж үлдлээ");}
+                    else if(oroldlogo==3&&pass !== passUtga ){
+                        alert("Нууц үг буруу байна. Таны нууц үг блоклогдлоо");
+                        break;}
+                    }
+                }
     </script>
 </body>
 </html>
